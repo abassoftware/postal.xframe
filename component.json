@@ -5,6 +5,6 @@
     "dependencies": {
         "lodash": "^4.x",
         "postaljs": "2.0.4",
-        "postal.federation": "https://github.com/abassoftware/postal.federation.git#v0.5.4"
+        "postal.federation": "https://github.com/abassoftware/postal.federation.git#^v0.5.4"
     }
 }
