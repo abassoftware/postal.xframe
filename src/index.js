@@ -1,5 +1,6 @@
 import _ from "lodash";
 import postal from "postal";
+// import "babel-plugin-transform-runtime";
 import {
 	_memoRemoteByInstanceId,
 	_memoRemoteByTarget,
@@ -14,7 +15,7 @@ function listener() {
 }
 
 function listenToWorker( worker ) {
-	if ( !_.include( state.workers, worker ) ) {
+	if ( !_.includes( state.workers, worker ) ) {
 		worker.addEventListener( "message", listener );
 		state.workers.push( worker );
 	}
@@ -135,7 +136,7 @@ const plugin = postal.fedx.transports.xframe = {
 				// aww, heck - we don't have instanceId(s) or target(s), so it's ALL THE REMOTES
 				this.remotes;
 		if ( !options.doNotNotify ) {
-			_.each( clients, _disconnectClient, this );
+			_.each( clients, _disconnectClient );
 		}
 		this.remotes = _.without.apply( null, [ this.remotes ].concat( clients ) );
 	},
@@ -143,7 +144,7 @@ const plugin = postal.fedx.transports.xframe = {
 		targets = _.isArray( targets ) ? targets : [ targets ];
 		targets = targets.length ? targets : this.getTargets();
 		callback = callback || NO_OP;
-		_.each( targets, function( def ) {
+		_.each( targets, ( def ) => {
 			if ( def.target ) {
 				def.origin = def.origin || state.config.defaultOriginUrl;
 				let remote = _.find( this.remotes, function( x ) {
@@ -155,7 +156,7 @@ const plugin = postal.fedx.transports.xframe = {
 				}
 				remote.sendPing( callback );
 			}
-		}, this );
+		} );
 	},
 	addEventListener: env.isWorker ? function() {
 		addEventListener( "message", listener );
