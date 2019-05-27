@@ -3,8 +3,8 @@
     "version": "0.5.0",
     "main": ["lib/postal.xframe.js"],
     "dependencies": {
-        "lodash": "3.x",
-        "postal.js": "1.x",
-        "postal.federation": "~0.5.2"
+        "lodash": "^4.x",
+        "postaljs": "2.0.4",
+        "postal.federation": "https://github.com/abassoftware/postal.federation.git#v0.5.4"
     }
 }

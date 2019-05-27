@@ -19,9 +19,9 @@
     "lib/postal.xframe.js"
   ],
   "dependencies": {
-    "lodash": "3.x",
-    "postal.federation": ">=0.5.2",
-    "postal.js": "1.x",
+    "lodash": "^4.x",
+    "postal.federation": "https://github.com/abassoftware/postal.federation.git#v0.5.4",
+    "postal": "2.0.4",
     "babel-polyfill": "~0.0.1"
   }
 }
